@@ -58,7 +58,10 @@ function capturePhoto() {
 	// Take picture using device camera and retrieve image as base64-encoded string
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
 		quality: 50,
-		destinationType: destinationType.DATA_URL
+		targetWidth: 720,
+		targetHeight: 540,
+		destinationType: destinationType.DATA_URL,
+		correctOrientation: true
 	});
 }
 
@@ -67,8 +70,12 @@ function capturePhoto() {
 function capturePhotoEdit() {
 	// Take picture using device camera, allow edit, and retrieve image as base64-encoded string
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-		quality: 20, allowEdit: true,
-		destinationType: destinationType.DATA_URL
+		quality: 20,
+		allowEdit: true,
+		targetWidth: 720,
+		targetHeight: 540,
+		destinationType: destinationType.DATA_URL,
+		correctOrientation: true
 	});
 }
 
