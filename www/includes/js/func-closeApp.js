@@ -1,3 +1,8 @@
+//DeviceReady function
+document.addEventListener('deviceready', function(){
+	document.addEventListener("backbutton", ShowExitDialog, false);
+}, false);
+
 //Dialog popup
 function ShowExitDialog(){
 	$("#myDialogs").empty();
@@ -21,10 +26,10 @@ function ShowExitDialog(){
 	});
 	
 	$("#button-DialogNo").bind("click", function(){
-		$("#AppDialogs").modal("hide");
+		$("#FMCGDialogs").modal("hide");
 	});
 	
 	$("#button-DialogClose").addClass("hide");
 	
-	$("#AppDialogs").modal();
+	$("#FMCGDialogs").modal();
 }
