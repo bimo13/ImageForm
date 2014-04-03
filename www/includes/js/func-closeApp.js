@@ -1,8 +1,3 @@
-//DeviceReady function
-document.addEventListener('deviceready', function(){
-	document.addEventListener("backbutton", ShowExitDialog, false);
-}, false);
-
 //Dialog popup
 function ShowExitDialog(){
 	$("#myDialogs").empty();

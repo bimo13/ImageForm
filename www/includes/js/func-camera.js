@@ -1,104 +1,42 @@
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
-
-// Wait for device API libraries to load
-//
-document.addEventListener("deviceready",onDeviceReady,false);
-
-// device APIs are available
-//
-function onDeviceReady() {
-	pictureSource=navigator.camera.PictureSourceType;
-	destinationType=navigator.camera.DestinationType;
-}
-
 // Called when a photo is successfully retrieved
 //
 function onPhotoDataSuccess(imageData) {
-	$("#myDialogs").empty();
-	$("#myDialogs").html("<div class=\"text-success\">Success</div>");
-	
-	$("#myDialogsText").removeClass("alert-success alert-info alert-warning alert-danger");
-	$("#myDialogsText").addClass("alert-success");
-	$("#myDialogsText").html("Succeed 1");
-	
-	$("#button-DialogYes").removeClass("btn-info btn-danger btn-warning btn-primary hide");
-	$("#button-DialogNo").removeClass("hide");
-	$("#button-DialogClose").removeClass("hide");
-	
-	$("#button-DialogYes").unbind();
-	$("#button-DialogNo").unbind();
-	$("#button-DialogClose").unbind();
-	
-	$("#button-DialogClose").bind("click", function(){
-		$("#AppDialogs").modal("hide");
-	});
-	
-	$("#button-DialogYes").addClass("hide");
-	$("#button-DialogNo").addClass("hide");
-	
-	$("#pleasewait").modal('hide');
-	$("#AppDialogs").modal();
   // Uncomment to view the base64-encoded image data
   // console.log(imageData);
 
   // Get image handle
   //
-  //var smallImage = document.getElementById('smallImage');
+  var smallImage = document.getElementById('smallImage');
 
   // Unhide image elements
   //
-  //smallImage.style.display = 'block';
+  smallImage.style.display = 'block';
 
   // Show the captured photo
   // The inline CSS rules are used to resize the image
   //
-  //smallImage.src = "data:image/jpeg;base64," + imageData;
+  smallImage.src = "data:image/jpeg;base64," + imageData;
   
 }
 
 // Called when a photo is successfully retrieved
 //
 function onPhotoURISuccess(imageURI) {
-	$("#myDialogs").empty();
-	$("#myDialogs").html("<div class=\"text-success\">Success</div>");
-	
-	$("#myDialogsText").removeClass("alert-success alert-info alert-warning alert-danger");
-	$("#myDialogsText").addClass("alert-success");
-	$("#myDialogsText").html("Succeed 2");
-	
-	$("#button-DialogYes").removeClass("btn-info btn-danger btn-warning btn-primary hide");
-	$("#button-DialogNo").removeClass("hide");
-	$("#button-DialogClose").removeClass("hide");
-	
-	$("#button-DialogYes").unbind();
-	$("#button-DialogNo").unbind();
-	$("#button-DialogClose").unbind();
-	
-	$("#button-DialogClose").bind("click", function(){
-		$("#AppDialogs").modal("hide");
-	});
-	
-	$("#button-DialogYes").addClass("hide");
-	$("#button-DialogNo").addClass("hide");
-	
-	$("#pleasewait").modal('hide');
-	$("#AppDialogs").modal();
   // Uncomment to view the image file URI
   // console.log(imageURI);
 
   // Get image handle
   //
-  //var largeImage = document.getElementById('largeImage');
+  var largeImage = document.getElementById('largeImage');
 
   // Unhide image elements
   //
-  //largeImage.style.display = 'block';
+  largeImage.style.display = 'block';
 
   // Show the captured photo
   // The inline CSS rules are used to resize the image
   //
-  //largeImage.src = imageURI;
+  largeImage.src = imageURI;
 }
 
 // A button will call this function
