@@ -12,7 +12,7 @@ function onPhotoDataSuccess(imageURI) {
 
         // Get image handle
         //
-        var imgProfile = document.getElementById('imgProfile');
+        var imgProfile = document.getElementById('largeImage');
 
         // Show the captured photo
         // The inline CSS rules are used to resize the image
