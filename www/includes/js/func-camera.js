@@ -60,22 +60,7 @@ function capturePhoto() {
 		quality: 50,
 		targetWidth: 720,
 		targetHeight: 540,
-		destinationType: destinationType.DATA_URL,
-		correctOrientation: true,
-		saveToPhotoAlbum: true
-	});
-}
-
-// A button will call this function
-//
-function capturePhotoEdit() {
-	// Take picture using device camera, allow edit, and retrieve image as base64-encoded string
-	navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-		quality: 20,
-		allowEdit: true,
-		targetWidth: 720,
-		targetHeight: 540,
-		destinationType: destinationType.DATA_URL,
+		destinationType: destinationType.FILE_URI,
 		correctOrientation: true,
 		saveToPhotoAlbum: true
 	});
