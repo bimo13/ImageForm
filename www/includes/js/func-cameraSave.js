@@ -17,6 +17,7 @@ function onPhotoDataSuccess(imageURI) {
         // Show the captured photo
         // The inline CSS rules are used to resize the image
         //
+		imgProfile.style.display = 'block';
         imgProfile.src = imageURI;
         if(sessionStorage.isprofileimage==1){
             getLocation();
