@@ -61,7 +61,8 @@ function capturePhoto() {
 		targetWidth: 720,
 		targetHeight: 540,
 		destinationType: destinationType.DATA_URL,
-		correctOrientation: true
+		correctOrientation: true,
+		saveToPhotoAlbum: false
 	});
 }
 
@@ -75,7 +76,8 @@ function capturePhotoEdit() {
 		targetWidth: 720,
 		targetHeight: 540,
 		destinationType: destinationType.DATA_URL,
-		correctOrientation: true
+		correctOrientation: true,
+		saveToPhotoAlbum: false
 	});
 }
 
