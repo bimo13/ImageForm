@@ -1,19 +1,25 @@
 function capturePhoto() {
 // Take picture using device camera and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+		quality: 50,
+		targetWidth: 720,
+		targetHeight: 540,
+		correctOrientation: true,
+		destinationType: Camera.destinationType.FILE_URI
+	});
 }
 
 //Callback function when the picture has been successfully taken
-function onPhotoDataSuccess(imageData) {                
+function onPhotoDataSuccess(imageURI) {                
     // Get image handle
     var smallImage = document.getElementById('smallImage');
 
     // Unhide image elements
     smallImage.style.display = 'block';
-    smallImage.src = imageData;
+    smallImage.src = imageURI;
 	
 	//trigger movePic
-	movePic(imageData);
+	movePic(imageURI);
 }
 
 //Callback function when the picture has not been successfully taken
@@ -51,6 +57,7 @@ function resolveOnSuccess(entry){
 //Callback function when the file has been moved successfully - inserting the complete path
 function successMove(entry) {
     //I do my insert with "entry.fullPath" as for the path
+	alert("Save success");
 }
 
 function resOnError(error) {
