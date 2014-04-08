@@ -1,12 +1,15 @@
 function capturePhoto() {
-// Take picture using device camera and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+	// Take picture using device camera and retrieve image as base64-encoded string
+    /*
+	navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
 		quality: 50,
 		targetWidth: 720,
 		targetHeight: 540,
 		correctOrientation: true,
 		destinationType: Camera.destinationType.FILE_URI
 	});
+	*/
+	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
 }
 
 //Callback function when the picture has been successfully taken
