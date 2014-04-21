@@ -43,18 +43,11 @@ function resolveOnSuccess(entry){
     var n = d.getTime();
     //new file name
     var newFileName = n + ".jpg";
-    var myFolderApp = "ABCapp/ABCsub";
-
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {      
-    //The folder is created if doesn't exist
-    fileSys.root.getDirectory( myFolderApp,
-                    {create:true, exclusive: false},
-                    function(directory) {
-                        entry.moveTo(directory, newFileName,  successMove, resOnError);
-                    },
-                    resOnError);
-                    },
-    resOnError);
+    var myFolderApp = "ABCapp";
+	var mySubFolderApp = "ABCapp/ABCsub";
+	
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) { fileSys.root.getDirectory( myFolderApp, {create:true, exclusive: false}, null, resOnError); }, resOnError );
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) { fileSys.root.getDirectory( mySubFolderApp, {create:true, exclusive: false}, function(directory) { entry.moveTo(directory, newFileName,  successMove, resOnError); }, resOnError); }, resOnError);
 }
 
 //Callback function when the file has been moved successfully - inserting the complete path
