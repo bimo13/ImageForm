@@ -14,6 +14,9 @@
 				Total IT
 			</author>
 			
+			<!-- Specify platform for Android only. -->
+			<gap:platform name="android" />
+			
 			<!-- Preferences for global platform. -->
 			<preference name="phonegap-version" value="3.3.0" />
 			<preference name="orientation"      value="default" />
