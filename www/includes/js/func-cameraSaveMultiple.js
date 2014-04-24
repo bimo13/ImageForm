@@ -1,8 +1,8 @@
 function onPrevClick(element){
-	capturePhoto();
+	capturePhoto(element);
 }
 
-function capturePhoto() {
+function capturePhoto(element) {
 	navigator.camera.getPicture(
 		function(imageURI){
 			return onPhotoDataSuccess(imageURI, element);
