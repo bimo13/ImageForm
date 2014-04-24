@@ -1,7 +1,6 @@
-$(".pic-preview").click(function(){
-	var element		=	$(this);
+function onPrevClick(element){
 	capturePhoto();
-});
+}
 
 function capturePhoto() {
 	navigator.camera.getPicture(
